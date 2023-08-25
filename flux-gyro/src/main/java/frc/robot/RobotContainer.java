@@ -8,9 +8,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.commands.NavX.GyroValue;
 import frc.robot.subsystems.Navx;
-import edu.wpi.first.wpilibj.Joystick;
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -23,23 +20,14 @@ public class RobotContainer {
   
   
   private Navx m_gyro = new Navx();
+
   private GyroValue m_gyroVal = new GyroValue(m_gyro);
-
-  // change port later
-  private final Joystick m_joystick = new Joystick(0);
-
-
-
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
   }
-
-
-
-
 
 
   /**
@@ -64,7 +52,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    return null;
+    return m_gyroVal;
   }
 
 
